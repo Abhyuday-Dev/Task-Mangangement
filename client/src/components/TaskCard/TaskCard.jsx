@@ -18,7 +18,7 @@ const TaskCard = ({ task, handleTaskDelete, handleEditClick }) => {
 
   return (
     <div className="task-container">
-      <div className="title" style={{ color: status === "Done" ? "green" : "red" }}>{title}</div>
+      <div className="title" style={{ color: status !== "pending" ? "green" : "red" }}>{title}</div>
       <div className="description">{description}</div>
       <div className="bottom">
         <div className="icons">
@@ -31,7 +31,7 @@ const TaskCard = ({ task, handleTaskDelete, handleEditClick }) => {
         </div>
         <div className="status">
           <p style={{ fontSize: "1rem" }}>Status:</p>
-          {status === "Done" ? (
+          {status !== "pending" ? (
             <IoMdCheckmarkCircleOutline style={{ color: "green" }} />
           ) : (
             <RxCross2 style={{ color: "red" }} />

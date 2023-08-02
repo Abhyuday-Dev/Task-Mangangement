@@ -36,3 +36,18 @@
     gap: 12px;
     font-size: 1.8rem;
 }
+
+@media screen and (max-width: 350px) {
+    .task-container {
+        width: 300px;
+      height: auto; /* Adjust height to fit content */
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .description{
+        font-size: 1rem;
+    }
+   
+  }
