@@ -1,6 +1,7 @@
 .task-section{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     flex: 1;
+    padding: 1rem;
 }

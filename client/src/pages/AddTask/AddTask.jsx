@@ -17,7 +17,7 @@ const AddTask = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8000/api/v1/add', formData);
+      await axios.post('https://task-68kw.onrender.com/api/v1/add', formData);
       alert('Task added successfully');
       setFormData({ title: '', description: '', status: 'pending' });
     } catch (error) {
@@ -39,6 +39,7 @@ const AddTask = () => {
               type="text"
               id="name"
               name="title"
+              required
               onChange={handleChange}
               value={formData.title}
             />
@@ -50,12 +51,12 @@ const AddTask = () => {
             </label>
             <input
               type="text"
+              required
               name="description"
               onChange={handleChange}
               value={formData.description}
             />
           </li>
-          {/* The status field is hidden, with default value "pending" */}
           <input type="hidden" name="status" value={formData.status} />
           <li>
             <input type="submit" onClick={handleSubmit} value="Add Task" />

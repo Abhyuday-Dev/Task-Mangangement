@@ -8,7 +8,7 @@ import "./AllTasks.css";
 const AllTasks = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [editTaskId, setEditTaskId] = useState(null); // Change to editTaskId
+  const [editTaskId, setEditTaskId] = useState(null); 
 
   useEffect(() => {
     fetchData();
@@ -16,7 +16,7 @@ const AllTasks = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/allTasks");
+      const response = await axios.get("https://task-68kw.onrender.com/api/v1/allTasks");
       setData(response.data);
       setLoading(false);
     } catch (error) {
@@ -36,11 +36,11 @@ const AllTasks = () => {
   };
 
   const handleEditClick = (taskId) => {
-    setEditTaskId(taskId); // Use setEditTaskId instead of setEditBookId
+    setEditTaskId(taskId); 
   };
 
   const handleEditCancel = () => {
-    setEditTaskId(null); // Use setEditTaskId instead of setEditBookId
+    setEditTaskId(null); 
   };
 
   return (
@@ -48,7 +48,7 @@ const AllTasks = () => {
       <h4>{editTaskId ? 'Update Task' : 'All Tasks'}</h4>
       <div className="books-display">
         {loading ? (
-          <div>Loading...</div>
+          <div style={{margin:"0 200px"}}>Loading...</div>
         ) : (
           <div>
             {editTaskId ? (

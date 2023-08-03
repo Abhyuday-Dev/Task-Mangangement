@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./UpdateForm.css";
 
-const UpdateForm = ({ taskId, handleEditCancel, fetchData }) => {
+const UpdateForm = ({ taskId, handleEditCancel, fetchData, status }) => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    status: "",
+    status: status, 
   });
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const UpdateForm = ({ taskId, handleEditCancel, fetchData }) => {
     try {
       console.log("Fetching task data for taskId:", taskId);
       const response = await axios.get(
-        `http://localhost:8000/api/v1/getTask/${taskId}`
+        `https://task-68kw.onrender.com/api/v1/getTask/${taskId}`
       );
       const { _id, title, description, status } = response.data.task;
       console.log("Fetched data:", response.data.task);
@@ -38,7 +38,7 @@ const UpdateForm = ({ taskId, handleEditCancel, fetchData }) => {
 
     try {
       await axios.put(
-        `http://localhost:8000/api/v1/updateTask/${taskId}`,
+        `https://task-68kw.onrender.com/api/v1/updateTask/${taskId}`,
         formData
       );
       alert("Task updated successfully");
