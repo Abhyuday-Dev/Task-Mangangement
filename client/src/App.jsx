@@ -2,10 +2,7 @@ import React from "react";
 import { BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Main from './components/Main/Main';
-import AddTask from "./components/AddTask/AddTask";
-import AllTasks from "./components/AllTasks/AllTasks";
-
+import {Main,AllTasks,AddTask} from "./pages"
 
 function App() {
   return (

@@ -73,14 +73,16 @@ const UpdateForm = ({ taskId, handleEditCancel, fetchData }) => {
         ></textarea>
 
         <label htmlFor="status">Status:</label>
-        <input
-          type="text"
+        <select
           id="status"
           name="status"
           value={formData.status}
           onChange={handleChange}
           required
-        />
+        >
+          <option value="Pending">Pending</option>
+          <option value="Done">Done</option>
+        </select>
 
         <div className="buttons">
           <button type="submit">Update</button>

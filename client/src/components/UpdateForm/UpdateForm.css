@@ -6,6 +6,20 @@
     flex-direction: column;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
+
+  #status{
+    width: 100%;
+    padding: 9px 20px;
+    border: 1px solid #e1e2eb;
+    background-color: #fff;
+    color: #102a43;
+    caret-color: #829ab1;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 2rem;
+    box-shadow: inset 0 2px 4px 0 rgba(206, 209, 224, 0.2);
+    border-radius: 3px;
+  }
   
   .update-form h2 {
     font-size: 2rem;
